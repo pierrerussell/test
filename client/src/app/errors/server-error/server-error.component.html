@@ -1,0 +1,12 @@
+<h4>Internal Server Error</h4>
+<ng-container *ngIf="error">
+    <h5 class="text-danger"> Error: {{error.message}}</h5>
+    <p class="font-weight-bold">Server error</p>
+    <ol>
+        <li>Open chrom devtools. check failing request in network tab</li>
+        <li>examine request url</li>
+        <li>reproduce problem in postman</li>
+    </ol>
+    <p class="font-weight-bold">Stack trace</p>
+    <code class="mt-5" style="background-color: whitesmoke;">{{error.details}}</code>
+</ng-container>
