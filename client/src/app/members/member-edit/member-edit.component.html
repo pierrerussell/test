@@ -1,0 +1,58 @@
+<h1 *ngIf="member">{{member.knownAs}}</h1>
+
+<div class="row" *ngIf="member">
+    <div class="col-4">Your profile</div>
+    <div class="col-8">
+        <div class="alert alert-info">
+            <p>
+                <strong>
+                    Information
+                </strong>
+                Unsaved changes wil be lost
+            </p>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="card">
+        <img src="{{member.photoUrl || './assets/user.png'}}" alt="{{member.knownAs}}" class="card-img-top img-thumbnail">
+        <div class="card-body">
+            <div>
+                <strong>Locations:</strong>
+                <p>{{member.city}}, {{member.country}}</p>
+            </div>
+            <div>
+                <strong>Age:</strong>
+                <p>{{member.age}}</p>
+            </div>
+        </div>
+        <div class="card-footer">
+                <button class="btn btn-primary col-12">Save</button>
+
+        </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <tabset class="member-tabset">
+            <tab heading="About {{member.knownAs}}">
+                <form>
+                    <h4>Description</h4>
+                    <textarea class="form-control" rows="6" [(ngModel)]="member.intro" name="introduction"></textarea>
+                    <p>Desc here</p>
+
+                </form>
+                <form>
+                    <h4>Description</h4>
+                    <textarea class="form-control" rows="6" [(ngModel)]="member.intro" name="introduction"></textarea>
+                    <p>Desc here</p>
+
+                </form>
+            
+            </tab>
+
+            <tab heading="Interests">
+                <h4>Interests</h4>
+                <p>{{member.interests}}</p>
+            </tab>
+        </tabset>
+    </div>
+</div>
