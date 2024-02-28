@@ -7,7 +7,7 @@ import { ControlValueAccessor, FormControl, NgControl } from '@angular/forms';
   styleUrls: ['./test-inputs.component.css']
 })
 export class TestInputsComponent implements ControlValueAccessor {
-  @Input() label = 'hello';
+  @Input() label = '';
   @Input() type = 'text';
   constructor(@Self() public ngControl: NgControl) {
     this.ngControl.valueAccessor = this;
